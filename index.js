@@ -45,8 +45,15 @@ console.log(getLast(["cloud", "tifa", "REDXIII"]))
  * getFirstLast([42]); // [42]
  */
 export function getFirstLast(array) {
-  // TODO
+  if (array.length == 0) {
+    return []
+  } else if (array.length == 1) {
+    return array
+  } else {
+    return [array[0], array[array.length-1]]
+  }
 }
+console.log(getFirstLast([3,6,7,2]))
 
 /**
  * @param {string} str1 - the first string
