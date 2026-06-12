@@ -53,7 +53,7 @@ export function getFirstLast(array) {
     return [array[0], array[array.length-1]]
   }
 }
-console.log(getFirstLast([3,6,7,2]))
+console.log(getFirstLast([42]))
 
 /**
  * @param {string} str1 - the first string
@@ -69,8 +69,13 @@ console.log(getFirstLast([3,6,7,2]))
  * sharesFirstLetter("cat", "dog"); // false
  */
 export function sharesFirstLetter(str1, str2) {
-  // TODO
+  if (str1.length == 0 || str2.length == 0) {
+    return false
+  } else {
+    return (str1[0] == str2[0])
+  }
 }
+console.log(sharesFirstLetter("", ""))
 
 /**
  * @param {number[]} numbers - an array of numbers
