@@ -192,8 +192,14 @@ console.log(getLongestWord(["bell", "blueberries", "grandpa", "braggadocious"]))
  * findSong([], "Midnight Drive"); // -1
  */
 export function findSong(playlist, song) {
-  // TODO
+  for (let i = 0; i < playlist.length; i++) {
+    if (song === playlist[i]) {
+      return i
+    } 
+  } 
+  return -1
 }
+console.log(findSong(["Aerith's Theme", "Balamb Garden", "One Winged Angel", "Find Your Way", "Eyes on Me"], "Cosmo Canyon"))
 
 /**
  * @param {string[][]} map - a 2D array in which each element is a string that
@@ -209,5 +215,5 @@ export function findSong(playlist, song) {
  * findSpy([["tree","lamp"],["pigeon","guard"]]); // null
  */
 export function findSpy(map) {
-  // TODO
+  
 }
