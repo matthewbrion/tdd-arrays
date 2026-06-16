@@ -89,8 +89,13 @@ console.log(sharesFirstLetter("", ""))
  * quintuple([]); // []
  */
 export function quintuple(numbers) {
-  // TODO
+  let newArray = []
+  for (let i = 0; i < numbers.length; i++) {
+    newArray.push(numbers[i]*5)
+  }
+  return newArray
 }
+console.log(quintuple([3,6,2,7,1]))
 
 /**
  * There is a general rule for making nouns plural in English:
@@ -110,8 +115,17 @@ export function quintuple(numbers) {
  * pluralize([]); // []
  */
 export function pluralize(words) {
-  // TODO
+  let newArray = []
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].endsWith("s")) {
+      newArray.push(words[i]+"es")
+    } else {
+      newArray.push(words[i]+"s")
+    }
+  }
+  return newArray
 }
+console.log(pluralize(["summon", "chocobo", "weapon", "grass"]))
 
 /**
  * @param {boolean[]} attendance - an array representing student attendance
@@ -127,8 +141,15 @@ export function pluralize(words) {
  * countAttendance([]); // 0
  */
 export function countAttendance(attendance) {
-  // TODO
+  let sumPresent = 0
+  for (let i = 0; i < attendance.length; i++) {
+    if (attendance[i] == true) {
+      sumPresent = sumPresent + 1
+    }
+  } 
+  return sumPresent
 }
+console.log(countAttendance([true, false, true, true, false, true]))
 
 /**
  * @param {string[]} sentence - an array of words
@@ -143,8 +164,19 @@ export function countAttendance(attendance) {
  * getLongestWord(["a", "ab", "abc"]); // "abc"
  */
 export function getLongestWord(sentence) {
-  // TODO
+  if (sentence.length === 0) {
+    return null
+  } 
+  let longestWord = null
+  let longestLength = 0
+  for (let i = 0; i < sentence.length; i++)
+    if (sentence[i].length > longestLength) {
+      longestLength = sentence[i].length
+      longestWord = sentence[i]
+    }
+  return longestWord
 }
+console.log(getLongestWord(["bell", "blueberries", "grandpa", "braggadocious"]))
 
 /**
  * @param {string[]} playlist - an array of song titles
